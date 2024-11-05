@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Card</title>
+  <style>
+    /* Fullscreen background bear image */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background-image: url('images/bear.png'); /* Path to the bear image */
+      background-size: 50%; /* Ensures the image covers the entire screen */
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .card {
+      width: 300px;
+      height: 250px;
+      background-color: rgba(255, 235, 205, 0.7); /* Semi-transparent background */
+      display: flex;
+      justify-content: space-between;
+      border-radius: 10px;
+      transform: scale(0.1);
+      transition: transform 1s ease;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow for visibility */
+      border: 2px solid #333; /* Dark border for contrast */
+    }
+
+    .card-left {
+      width: 50%;
+      background-color: #ffebcd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .left-image {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 5px; /* Optional: add rounding to match the card style */
+    }
+
+    .card-right {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      font-size: 1em;
+      color: #333;
+      text-align: center;
+    }
+
+    .card-right p {
+      margin: 0;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .friend-images {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .friend-images img {
+      width: 80px; /* Increased width */
+      height: 80px; /* Increased height */
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Enlarge the card after the page loads */
+    body.loaded .card {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="card-left">
+        <img src="images/Left-image.png" alt="Birthday Image" class="left-image">
+      </div>
+      <div class="card-right">
+        <p><font size="0.005%">Happy Birthday Divyanshi! 🐿️🎉<br>I know as a birthday gift, it is very less from someone who is close
+            but this is all I can give you right now from my place, though I would love to express heartfelt thanks to you
+            for being with me in all the highs & lows!</font></p>
+      </div>
+    </div>
+    <div class="friend-images">
+      <img src="images/sleepingbear.png" alt="Friend Image 1">
+      <img src="images/baggy.png" alt="Friend Image 2">
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
+</body>
+</html>
